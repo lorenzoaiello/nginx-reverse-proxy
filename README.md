@@ -16,7 +16,7 @@ Just drop this in place of `nginx` and set the following:
 version: '2'
 services:
   nginx:
-    image: lorenzoaiello/nginx-reverse-proxy
+    image: laiello/nginx-reverse-proxy
     environment:
       NGINX_PORT: '8080'
       NGINX_HOST: http://192.168.0.100:3000
