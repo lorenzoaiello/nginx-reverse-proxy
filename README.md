@@ -9,16 +9,18 @@ This is a super simple nginx setup that is pre-configured to allow for a simple 
 Just drop this in place of `nginx` and set the following:
 * Env `NGINX_PORT` - The host listening port
 * Env `NGINX_HOST` - The target service you want to reverse-proxy to
+* Env `HOST_HEADER` - The host header you want to reverse-proxy with
 
 **Sample `docker-compose.yml` - This will reverse-proxy `http://192.168.0.100:3000` on the host's port `8080`:**
 ```YAML
 version: '2'
 services:
   nginx:
-    image: james9074/nginx-reverse-proxy
+    image: lorenzoaiello/nginx-reverse-proxy
     environment:
       NGINX_PORT: '8080'
       NGINX_HOST: http://192.168.0.100:3000
+      HOST_HEADER: mydomain.com
     stdin_open: true
     tty: true
 ```
