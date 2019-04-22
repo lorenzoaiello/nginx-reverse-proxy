@@ -5,7 +5,7 @@ server {
     location / {
         # Some of these might not be required for other services
         # proxy_pass is the most important
-        proxy_set_header Host ${HOST_HEADER}host;
+        proxy_set_header Host ${HOST_HEADER};
         proxy_set_header X-Forwarded-Proto ${DOLLAR}scheme;
         proxy_set_header X-Forwarded-Port ${DOLLAR}server_port;
         proxy_set_header X-Forwarded-For ${DOLLAR}proxy_add_x_forwarded_for;
